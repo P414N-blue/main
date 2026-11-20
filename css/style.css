@@ -104,11 +104,12 @@ main {
 /* 세로 이미지 */
 .vertical-area {
     grid-row: span 2;
-    border: 2px solid #aaa0b5;
+    border: 2px solid var(--mainte-border, #222222);
     border-radius: 12px;
     overflow: hidden;
-    background: #f8f6fa;
+    background: var(--mainte-bg, #ffffff);
 }
+
 
 /* 오른쪽 영역 */
 .right-area {
@@ -120,18 +121,20 @@ main {
 
 /* 가로 이미지 */
 .horizontal-area {
-    border: 2px solid #aaa0b5;
+    border: 2px solid var(--mainte-border, #222222);
     border-radius: 12px;
     overflow: hidden;
-    background: #f8f6fa;
+    background: var(--mainte-bg, #ffffff);
 }
+
 
 /* 설명 영역 */
 .description-area {
     padding: 20px;
-    border: 2px solid #aaa0b5;
+    border: 2px solid var(--mainte-border, #222222);
     border-radius: 12px;
-    background: #faf9fc;
+    background: var(--mainte-bg, #ffffff);
+    color: #222222;
     overflow-wrap: anywhere;
 }
 
