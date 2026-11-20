@@ -1,4 +1,3 @@
-
 const editor = document.querySelector("#editor");
 const preview = document.querySelector("#preview");
 
