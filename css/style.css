@@ -187,3 +187,53 @@ main {
         grid-template-rows: 220px 220px;
     }
 }
+
+
+/* 이미지 업로드 버튼 */
+.controls input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #d5cddd;
+    border-radius: 8px;
+    background: #faf9fc;
+    color: #71677d;
+    font-size: 12px;
+}
+
+.controls input[type="file"]::file-selector-button {
+    padding: 7px 12px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 6px;
+    background: #e9e3ef;
+    color: #655875;
+    cursor: pointer;
+}
+
+.controls input[type="file"]::file-selector-button:hover {
+    background: #dcd2e7;
+}
+
+/* 색상 선택창 */
+.controls input[type="color"] {
+    display: block;
+    width: 100%;
+    height: 42px;
+    padding: 4px;
+    border: 1px solid #d5cddd;
+    border-radius: 8px;
+    background: #faf9fc;
+    cursor: pointer;
+}
+
+/* 입력창 포커스 */
+.controls textarea:focus {
+    border-color: #a99bb8;
+    outline: none;
+}
+
+/* 편집 패널 제목 */
+.controls h2 {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #e5dfeb;
+}
