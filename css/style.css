@@ -1,0 +1,72 @@
+
+/* 기본 설정 */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 40px 20px;
+    background: #f2eff5;
+    color: #51495c;
+    font-family: sans-serif;
+}
+
+/* 상단 제목 */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: 500;
+    letter-spacing: 3px;
+    color: #82758f;
+}
+
+header p {
+    color: #9990a3;
+    font-size: 14px;
+}
+
+/* 전체 편집 영역 */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* 왼쪽 세로 영역 */
+#editor {
+    width: 35%;
+    min-height: 600px;
+    background: #fff;
+    border: 2px solid #aaa0b5;
+    border-radius: 18px;
+}
+
+/* 오른쪽 미리보기 영역 */
+#preview {
+    flex: 1;
+    min-height: 600px;
+    background: #fff;
+    border: 2px solid #aaa0b5;
+    border-radius: 18px;
+}
+
+/* 작은 화면 대응 */
+@media (max-width: 650px) {
+    main {
+        flex-direction: column;
+    }
+
+    #editor,
+    #preview {
+        width: 100%;
+        min-height: 350px;
+    }
+}
