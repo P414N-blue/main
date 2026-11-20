@@ -6,21 +6,22 @@
 
 body {
     margin: 0;
-    padding: 40px 20px;
-    background: #f2eff5;
+    padding: 40px 24px;
+    background: #f3f0f6;
     color: #51495c;
     font-family: sans-serif;
 }
 
-/* 상단 제목 */
+/* 제목 */
 header {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 35px;
 }
 
 header h1 {
-    font-size: 32px;
-    font-weight: 500;
+    font-family: Georgia, serif;
+    font-size: 36px;
+    font-weight: normal;
     letter-spacing: 3px;
     color: #82758f;
 }
@@ -30,43 +31,156 @@ header p {
     font-size: 14px;
 }
 
-/* 전체 편집 영역 */
+/* 전체 레이아웃 */
 main {
     display: flex;
     justify-content: center;
-    align-items: stretch;
-    gap: 20px;
-    max-width: 1000px;
-    margin: 0 auto;
+    align-items: flex-start;
+    gap: 24px;
+    max-width: 1200px;
+    margin: auto;
 }
 
-/* 왼쪽 세로 영역 */
+/* 편집 패널 */
 #editor {
-    width: 35%;
-    min-height: 600px;
+    width: 280px;
+    flex-shrink: 0;
+    padding: 24px;
     background: #fff;
-    border: 2px solid #aaa0b5;
-    border-radius: 18px;
+    border: 1px solid #d5cddd;
+    border-radius: 16px;
 }
 
-/* 오른쪽 미리보기 영역 */
+.controls h2 {
+    font-size: 19px;
+    font-weight: normal;
+    color: #82758f;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.controls label {
+    display: block;
+    font-size: 13px;
+    margin: 20px 0 8px;
+    color: #71677d;
+}
+
+.controls input[type="file"] {
+    width: 100%;
+    font-size: 12px;
+}
+
+.controls textarea {
+    width: 100%;
+    min-height: 120px;
+    padding: 12px;
+    border: 1px solid #d5cddd;
+    border-radius: 8px;
+    resize: vertical;
+    font-family: inherit;
+    font-size: 13px;
+    outline-color: #a99bb8;
+}
+
+/* 미리보기 전체 */
 #preview {
     flex: 1;
-    min-height: 600px;
+    min-width: 0;
+    padding: 16px;
     background: #fff;
-    border: 2px solid #aaa0b5;
-    border-radius: 18px;
+    border: 1px solid #d5cddd;
+    border-radius: 16px;
 }
 
-/* 작은 화면 대응 */
-@media (max-width: 650px) {
+/* 메인트 틀 */
+.mainte-preview {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr;
+    gap: 14px;
+    min-height: 650px;
+}
+
+/* 세로 이미지 */
+.vertical-area {
+    grid-row: span 2;
+    border: 2px solid #aaa0b5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f6fa;
+}
+
+/* 오른쪽 영역 */
+.right-area {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    gap: 14px;
+    min-width: 0;
+}
+
+/* 가로 이미지 */
+.horizontal-area {
+    border: 2px solid #aaa0b5;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #f8f6fa;
+}
+
+/* 설명 영역 */
+.description-area {
+    padding: 20px;
+    border: 2px solid #aaa0b5;
+    border-radius: 12px;
+    background: #faf9fc;
+    overflow-wrap: anywhere;
+}
+
+.description-area p {
+    white-space: pre-wrap;
+    font-size: 14px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+/* 업로드 이미지 */
+.vertical-area img,
+.horizontal-area img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* 작은 화면 */
+@media (max-width: 800px) {
     main {
         flex-direction: column;
     }
 
-    #editor,
+    #editor {
+        width: 100%;
+    }
+
     #preview {
         width: 100%;
-        min-height: 350px;
+    }
+
+    .mainte-preview {
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 500px) {
+    .mainte-preview {
+        grid-template-columns: 1fr;
+        grid-template-rows: 400px auto;
+    }
+
+    .vertical-area {
+        grid-row: auto;
+    }
+
+    .right-area {
+        grid-template-rows: 220px 220px;
     }
 }
